@@ -1,7 +1,2 @@
-@extends('site.layout')
-
-@section('titulo', 'Home')
-
-@section('conteudo')
-<h1>Conteudo</h1>
-@endsection
+@include('includes.mensagem', ['titulo'=>'Mensagem de Sucesso!'])
+oi
