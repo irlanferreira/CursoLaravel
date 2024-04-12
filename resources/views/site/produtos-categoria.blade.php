@@ -1,13 +1,15 @@
 @extends('layout')
 
 @section('conteudo')
+    <h1>Categoria </h1>
     <div class="row container">
-        @forelse($produtos as $produto)
+        @foreach ($produtos as $produto)
             <div class="col s12 m4">
                 <div class="card">
                     <div class="card-image">
                         <img src="{{ $produto->imagem }}">
-                        <a href="{{route('site.details', $produto->slug)}}" class="btn-floating halfway-fab waves-effect waves-light red"><i
+                        <a href="{{ route('site.details', $produto->slug) }}"
+                            class="btn-floating halfway-fab waves-effect waves-light red"><i
                                 class="material-icons">visibility</i></a>
                     </div>
                     <div class="card-content">
@@ -16,13 +18,7 @@
                     </div>
                 </div>
             </div>
-
-        @empty
-        @endforelse
+        @endforeach
     </div>
-
-    <div class="row">
-        {{$produtos->links()}}
-
-    </div>
+    <div class="row center">{{$produtos->links()}}</div>
 @endsection
